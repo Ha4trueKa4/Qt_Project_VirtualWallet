@@ -11,8 +11,6 @@ database = 'database/VirtualWallet.sqlite'
 # Название окна приложения
 window_name = 'Виртуальный кошелёк'
 
-# Иконка приложения
-
 # Размеры окна
 SIZE = WIDTH, HEIGHT = 800, 600
 
