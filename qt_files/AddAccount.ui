@@ -142,10 +142,10 @@ background-color: #E27D60;
           <string notr="true"/>
          </property>
          <property name="maxLength">
-          <number>35</number>
+          <number>50</number>
          </property>
          <property name="placeholderText">
-          <string>Комментарий</string>
+          <string>Не указан</string>
          </property>
         </widget>
        </item>

@@ -79,7 +79,7 @@ class MainPage(QWidget):  # Основное окно программы
         self.initUI()
 
     def initUI(self):  # Инициализация окна
-        self.setWindowIcon(QIcon('../images/icon.png'))
+        self.setWindowIcon(QIcon('images/icon.png'))
         self.setWindowTitle(window_name)
         set_window_cords(self, CORDS)
         con = sqlite3.connect(database)
@@ -121,6 +121,7 @@ class MainPage(QWidget):  # Основное окно программы
 
         if self.accounts:
             self.account_change(self.accounts[0][1])
+
     def manipulate_accounts(self):
         self.close()
 
@@ -227,7 +228,7 @@ class LoginPage(QWidget):
         self.initUI()
 
     def initUI(self):  # Инициализация окна
-        self.setWindowIcon(QIcon('../images/icon.png'))
+        self.setWindowIcon(QIcon('images/icon.png'))
         set_window_cords(self, CORDS)
         self.setWindowTitle(window_name)
         # Подключение кнопок к методам
@@ -324,7 +325,7 @@ class ManipulateAccountsPage(QWidget):  # Окно управления счет
         self.initUI()
 
     def initUI(self):  # Инициализация окна
-        self.setWindowIcon(QIcon('../images/icon.png'))
+        self.setWindowIcon(QIcon('images/icon.png'))
         self.setWindowTitle(window_name)
         set_window_cords(self, CORDS)
         self.list_update()
@@ -443,7 +444,7 @@ class AddAccountPage(QWidget):
         self.initUI()
 
     def initUI(self):  # Инициализация окна
-        self.setWindowIcon(QIcon('../images/icon.png'))
+        self.setWindowIcon(QIcon('images/icon.png'))
         self.setWindowTitle(window_name)
         set_window_cords(self, CORDS)
         self.addButton.clicked.connect(self.add_account_to_db)
@@ -462,35 +463,30 @@ class AddAccountPage(QWidget):
                 nameNotUsed = False
         if name:
             if nameNotUsed:
-                if comment:
-                    if len(name) >= 4:
-                        if len(comment) >= 4:
-                            currency_id = CURRENCIES[self.currencyComboBox.currentText()]
-                            con = sqlite3.connect(database)
-                            cursor = con.cursor()
-                            cursor.execute('INSERT INTO accounts (name, amount, comment, userId, currencyId) '
-                                           f'VALUES ("{name.capitalize()}", 0, "{comment.capitalize()}", '
-                                           f'{self.userIndex}, {currency_id})')
-                            con.commit()
-                            self.acc_id = cursor.execute('SELECT accountId from accounts').fetchall()[-1][0]
+                if len(name) >= 4:
+                    if len(comment) >= 6 or not comment:
+                        currency_id = CURRENCIES[self.currencyComboBox.currentText()]
+                        con = sqlite3.connect(database)
+                        cursor = con.cursor()
+                        cursor.execute('INSERT INTO accounts (name, amount, comment, userId, currencyId) '
+                                       f'VALUES ("{name.capitalize()}", 0, "{comment.capitalize()}", '
+                                       f'{self.userIndex}, {currency_id})')
+                        con.commit()
+                        self.acc_id = cursor.execute('SELECT accountId from accounts').fetchall()[-1][0]
 
-                            # Всплывающее окно об успешном добавлении записи в базу данных
-                            self.addAccountMsgBox = QMessageBox(self)
-                            self.addAccountMsgBox.addButton("ОК", QMessageBox.AcceptRole)
-                            self.addAccountMsgBox.setWindowTitle(window_name)
-                            self.addAccountMsgBox.setInformativeText(f'{name} добавлен успешно!')
-                            self.addAccountMsgBox.exec()
-                            if self.addAccountMsgBox.clickedButton().text() == "ОК":
-                                self.addAccountMsgBox.close()
-                                self.close()
-                        else:
-                            self.errorLabel.setText('Длина комментария должна быть не меньше 4 символов!')
-                    elif len(comment) >= 6:
-                        self.errorLabel.setText('Длина названия должна быть не меньше 4 символов!')
+                        # Всплывающее окно об успешном добавлении записи в базу данных
+                        self.addAccountMsgBox = QMessageBox(self)
+                        self.addAccountMsgBox.addButton("ОК", QMessageBox.AcceptRole)
+                        self.addAccountMsgBox.setWindowTitle(window_name)
+                        self.addAccountMsgBox.setInformativeText(f'{name} добавлен успешно!')
+                        self.addAccountMsgBox.exec()
+                        if self.addAccountMsgBox.clickedButton().text() == "ОК":
+                            self.addAccountMsgBox.close()
+                            self.close()
                     else:
-                        self.errorLabel.setText('Длина названия и комментария должна быть не меньше 4 символов!')
+                        self.errorLabel.setText('Длина комментария должна быть не меньше 6 символов!')
                 else:
-                    self.errorLabel.setText('Комментарий не должен быть пустым!')
+                    self.errorLabel.setText('Длина названия должна быть не меньше 4 символов!')
             else:
                 self.errorLabel.setText(f'Название {name} уже занято!')
         elif comment:
@@ -516,7 +512,7 @@ class ChangeAccountDataPage(QWidget):  # окно изменения данны�
         self.initUI()
 
     def initUI(self):  # Инициализация окна
-        self.setWindowIcon(QIcon('../images/icon.png'))
+        self.setWindowIcon(QIcon('images/icon.png'))
         self.setWindowTitle(window_name)
         self.label_4.setText(f'Счёт: {self.accountName}')
         set_window_cords(self, CORDS)
@@ -627,7 +623,7 @@ class AddMoneyPage(QWidget):
         self.initUI()
 
     def initUI(self):  # Инициализация окна
-        self.setWindowIcon(QIcon('../images/icon.png'))
+        self.setWindowIcon(QIcon('images/icon.png'))
         self.setWindowTitle(window_name)
         set_window_cords(self, CORDS)
         self.amount = self.account[2]
@@ -714,7 +710,7 @@ class HistoryShowPage(QWidget):
         self.initUI()
 
     def initUI(self):  # Инициализация окна
-        self.setWindowIcon(QIcon('../images/icon.png'))
+        self.setWindowIcon(QIcon('images/icon.png'))
         self.setWindowTitle(window_name)
         set_window_cords(self, CORDS)
         con = sqlite3.connect(database)

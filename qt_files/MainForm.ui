@@ -190,13 +190,16 @@ background-color: #E27D60;
          <item>
           <widget class="QLabel" name="accountComment">
            <property name="styleSheet">
-            <string notr="true"/>
+            <string notr="true">QWidget {
+font-size: 25px;
+color:rgb(225, 225, 225);
+}</string>
            </property>
            <property name="text">
             <string/>
            </property>
            <property name="wordWrap">
-            <bool>false</bool>
+            <bool>true</bool>
            </property>
           </widget>
          </item>
