@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+background-color: #41B3A3;
+color: rgb(255, 255, 255);
+font-size: 40px;
+}
+QPushButton {
+font-size: 40px;
+color: rgb(255, 255, 255);
+background-color: #E8A87C;
+}
+QPushButton:pressed {
+background-color:  rgb(255, 255, 255);
+color: #E27D60;
+}
+QPushButton:hover:!pressed{
+background-color: #E27D60;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="cursor">
+      <cursorShape>ArrowCursor</cursorShape>
+     </property>
+     <property name="tabletTracking">
+      <bool>true</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTabBar::tab {
+   background-color: #E8A87C;
+  border: 1px solid white; 
+  min-width: 332px; 
+}
+QTabBar::tab:selected {  
+    background-color: #E27D60;;
+} 
+QTabBar::tab:hover {  
+    background-color: #E27D60;;
+} </string>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <property name="tabsClosable">
+      <bool>false</bool>
+     </property>
+     <property name="movable">
+      <bool>false</bool>
+     </property>
+     <property name="tabBarAutoHide">
+      <bool>false</bool>
+     </property>
+     <widget class="QWidget" name="loginTab">
+      <property name="styleSheet">
+       <string notr="true">QTabBar::loginTab {
+	color: rgb(73, 112, 255);
+}
+</string>
+      </property>
+      <attribute name="title">
+       <string>Войти</string>
+      </attribute>
+      <widget class="QPushButton" name="LoginButton">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>380</y>
+         <width>141</width>
+         <height>81</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">\</string>
+       </property>
+       <property name="text">
+        <string>Войти</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="ErrorLabel">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>270</y>
+         <width>461</width>
+         <height>91</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+color: #EDF5E1;
+font-size: 25px;
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QWidget" name="gridLayoutWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>90</y>
+         <width>461</width>
+         <height>201</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="LoginEdit">
+          <property name="mouseTracking">
+           <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">\</string>
+          </property>
+          <property name="maxLength">
+           <number>20</number>
+          </property>
+          <property name="placeholderText">
+           <string>Логин</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="LoginLabel">
+          <property name="styleSheet">
+           <string notr="true">\</string>
+          </property>
+          <property name="text">
+           <string>Логин:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="PwLabel">
+          <property name="styleSheet">
+           <string notr="true">\</string>
+          </property>
+          <property name="text">
+           <string>Пароль:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="PwEdit">
+          <property name="styleSheet">
+           <string notr="true">\</string>
+          </property>
+          <property name="maxLength">
+           <number>20</number>
+          </property>
+          <property name="placeholderText">
+           <string>Пароль</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="createTab">
+      <attribute name="title">
+       <string>Добавить пользователя</string>
+      </attribute>
+      <widget class="QPushButton" name="AddUserButton">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>380</y>
+         <width>461</width>
+         <height>81</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>Добавить пользователя</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="ErrorLabel_2">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>270</y>
+         <width>461</width>
+         <height>91</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+color: #EDF5E1;
+font-size: 25px;
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QWidget" name="gridLayoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>90</y>
+         <width>461</width>
+         <height>201</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="LoginEdit_2">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="maxLength">
+           <number>20</number>
+          </property>
+          <property name="placeholderText">
+           <string>Логин</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="PwEdit_2">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="maxLength">
+           <number>20</number>
+          </property>
+          <property name="placeholderText">
+           <string>Пароль</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="LoginLabel_2">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string>Логин:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="PwLabel_2">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string>Пароль:</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import QApplication, QWidget, QMessageBox, QTableWidgetItem
 import sqlite3
 
 # База данных приложения
-database = 'database/VirtualWallet.sqlite'
+database = 'database/VirtualWalletDb.sqlite'
 
 # Название окна приложения
 window_name = 'Виртуальный кошелёк'
@@ -571,7 +571,7 @@ class ChangeAccountDataPage(QWidget):  # окно изменения данны�
         if nameNotUsed:
             if self.accountName != name or self.data[0][1] != comment or self.currencyChanged:
                 if len(name) >= 4:
-                    if len(comment) >= 4:
+                    if len(comment) >= 4 or not comment:
                         comment = comment.capitalize()
                         if self.currencyChanged:
                             currency_id = CURRENCIES[self.currencyComboBox.currentText()]
