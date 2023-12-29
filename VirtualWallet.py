@@ -75,7 +75,7 @@ class MainPage(QWidget):  # Основное окно программы
         self.currAccIndex = curr_acc_index
         self.currAccIndexToHistory = None
         super().__init__()
-        uic.loadUi('qt_files/MainForm.ui', self)
+        uic.loadUi('qt files/MainForm.ui', self)
         self.initUI()
 
     def initUI(self):  # Инициализация окна
@@ -224,7 +224,7 @@ class LoginPage(QWidget):
 
     def __init__(self):
         super().__init__()
-        uic.loadUi('qt_files/LoginForm.ui', self)
+        uic.loadUi('qt files/LoginForm.ui', self)
         self.initUI()
 
     def initUI(self):  # Инициализация окна
@@ -321,7 +321,7 @@ class ManipulateAccountsPage(QWidget):  # Окно управления счет
         self.username = None
         self.currAccId = curr_acc_id
         super().__init__()
-        uic.loadUi('qt_files/AccountForm.ui', self)
+        uic.loadUi('qt files/AccountForm.ui', self)
         self.initUI()
 
     def initUI(self):  # Инициализация окна
@@ -440,7 +440,7 @@ class AddAccountPage(QWidget):
         super().__init__()
         self.userIndex = user_index
         self.acc_id = None
-        uic.loadUi('qt_files/AddAccount.ui', self)
+        uic.loadUi('qt files/AddAccount.ui', self)
         self.initUI()
 
     def initUI(self):  # Инициализация окна
@@ -508,7 +508,7 @@ class ChangeAccountDataPage(QWidget):  # окно изменения данны�
         self.userId = user_index
         self.acc_id = None
         self.currencyChanged = False
-        uic.loadUi('qt_files/ChangeAccountData.ui', self)
+        uic.loadUi('qt files/ChangeAccountData.ui', self)
         self.initUI()
 
     def initUI(self):  # Инициализация окна
@@ -619,7 +619,7 @@ class AddMoneyPage(QWidget):
         self.account = account
         self.sign = sign
         super().__init__()
-        uic.loadUi('qt_files/Manipulate.ui', self)
+        uic.loadUi('qt files/Manipulate.ui', self)
         self.initUI()
 
     def initUI(self):  # Инициализация окна
@@ -706,7 +706,7 @@ class HistoryShowPage(QWidget):
         self.name = name
         self.userId = userid
         self.accId = id
-        uic.loadUi('qt_files/HistoryView.ui', self)
+        uic.loadUi('qt files/HistoryView.ui', self)
         self.initUI()
 
     def initUI(self):  # Инициализация окна
