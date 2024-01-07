@@ -744,7 +744,7 @@ class HistoryShowPage(QWidget):
                         month = time.strftime("%B")
                         format_of_time = time.strftime("%H:%M:%S")
 
-                        full_date = f'{format_of_time} {month} {day_of_the_month} '
+                        full_date = f'{format_of_time} {month} {day_of_the_month}  '
 
                         val = full_date
 

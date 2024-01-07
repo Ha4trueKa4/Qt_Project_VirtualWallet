@@ -105,7 +105,7 @@ background-color: #E27D60;
           <string notr="true"/>
          </property>
          <property name="text">
-          <string>Сменить</string>
+          <string>Выйти</string>
          </property>
          <property name="autoRepeat">
           <bool>false</bool>

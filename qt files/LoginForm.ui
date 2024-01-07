@@ -108,15 +108,15 @@ QTabBar::tab:hover {
        <property name="geometry">
         <rect>
          <x>150</x>
-         <y>270</y>
+         <y>290</y>
          <width>461</width>
-         <height>91</height>
+         <height>71</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">QLabel {
 color: #EDF5E1;
-font-size: 25px;
+font-size: 20px;
 }</string>
        </property>
        <property name="text">
@@ -215,7 +215,7 @@ font-size: 25px;
        <property name="geometry">
         <rect>
          <x>150</x>
-         <y>270</y>
+         <y>280</y>
          <width>461</width>
          <height>91</height>
         </rect>
@@ -223,7 +223,7 @@ font-size: 25px;
        <property name="styleSheet">
         <string notr="true">QLabel {
 color: #EDF5E1;
-font-size: 25px;
+font-size: 20px;
 }</string>
        </property>
        <property name="text">
