@@ -180,6 +180,9 @@ font-size: 25px;
           <property name="maxLength">
            <number>20</number>
           </property>
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
           <property name="placeholderText">
            <string>Пароль</string>
           </property>
@@ -260,6 +263,9 @@ font-size: 25px;
           </property>
           <property name="maxLength">
            <number>20</number>
+          </property>
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
           </property>
           <property name="placeholderText">
            <string>Пароль</string>

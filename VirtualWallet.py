@@ -28,10 +28,6 @@ USERS = [i[1] for i in USERS_DATA]
 # Список валют
 CURR_DATA = cur.execute('SELECT * from currencies').fetchall()
 
-# Словарь для записи месяцев в базу данных
-months = {"January": 'Января', "February": "Февраля", "March": "Марта", "April": "Апреля",
-          "May": "Мая", "June": "Июня", "July": "Июля", "August": "Августа",
-          "September": "Сентября", "October": "Октября", "November": "Ноября", "December": "Декабря"}
 
 # Словарь для валют и их символов
 CURRENCIES = {}
@@ -748,7 +744,7 @@ class HistoryShowPage(QWidget):
                         month = time.strftime("%B")
                         format_of_time = time.strftime("%H:%M:%S")
 
-                        full_date = f'{format_of_time} {day_of_the_month} {months[month]} '
+                        full_date = f'{format_of_time} {month} {day_of_the_month} '
 
                         val = full_date
 
